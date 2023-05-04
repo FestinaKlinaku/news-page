@@ -1,0 +1,187 @@
+body {
+	max-width: 1720px;
+	width: 100%;
+	background: $accent1;
+    .container {
+        padding: 0 5rem;
+        @include mobile {
+            padding: 0 1.25rem;
+        }
+        @include tablet {
+            padding: 0 2.75rem;
+        }
+        .news {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            &__categories {
+                padding: 2rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                column-gap: 1.25rem;
+                .news__category {
+                    background-color: transparent;
+                    border: none;
+                    color: $accent3;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    transition: ease-in 0.3s;
+                    cursor: pointer;
+                    &:hover {
+                        font-size: 1.25rem;
+                    }
+                }
+                .news__category--active {
+                    color: $accent4;
+                }
+            }
+            &__list {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 2.25rem;
+                @include mobile {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+                .news__item {
+                    padding: 2rem 1.25rem;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    transition: ease-in 0.3s;
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                    @include mobile {
+                        line-height: 175%;
+                    }
+                    .news__link {
+                        text-decoration: none;
+                        color: $accent3;
+                        .news__title {
+                            text-align: center;
+                            margin-bottom: 1.25rem;
+                            color: $accent2;
+                            font-weight: 700;
+                        }
+                        .news__image {
+                            margin-bottom: 1.25rem;
+                            height: 18.75rem;
+                            img {
+                                width: 100%;
+                                height: inherit;
+                                object-fit: cover;
+                            }
+                        }
+                        .news__date {
+                            display: block;
+                            margin-bottom: 1.25rem;
+                        }
+                        .news__excerpt {
+                            text-align: justify;
+                        }
+                    }
+                }
+            }
+            &__load-more {
+                @include button;
+                width: 20%;
+                @include mobile {
+                    width: 100%;
+                }
+            }
+            &__loader {
+                @include loader;
+                display: none;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            &__loader-wrapper {
+                height: 100px;
+                margin-bottom: 2rem;
+                display: none;
+            }
+            &__loader-bottom {
+                @include loader;
+                position: fixed;
+                bottom: 1.25rem;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                margin: 1.25rem auto;
+            }
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+            &__article {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0 10%;
+                @include mobile {
+                    margin: 0;
+                }
+                .news__title {
+                    margin: 1.25rem 0;
+                    font-size: 2rem;
+                    font-weight: 700;
+                    text-align: center;
+                    @include mobile {
+                        line-height: 115%;
+                    }
+                }
+                .news__content {
+                    margin-bottom: 1.25rem;
+                    @include mobile {
+                        margin: 0;
+                    }
+                    section  {
+                        margin: 0.75rem 0;
+                    }
+                    p {
+                        display: block;
+                        text-align: justify;
+                        line-height: 1.25rem;
+                        margin: 0.75rem 0;
+                        a {
+                            text-decoration: none;
+                            color: red;
+                        }
+                        @include mobile {
+                            line-height: 175%;
+                        }
+                    }
+                    small {
+                        display: block;
+                        text-align: center;
+                        font-weight: 700;
+                        @include mobile {
+                            line-height: 115%;
+                        }
+                    }
+                    figure {
+                        width: 100% !important;
+                    }
+                    figcaption {
+                        display: block;
+                        text-align: center;
+                        font-weight: 700;
+                        @include mobile {
+                            line-height: 115%;
+                        }
+                    }
+                }
+            }
+            &__go-back {
+                @include button;
+                width: 20%;
+                display: none;
+                @include mobile {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
