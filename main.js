@@ -1,15 +1,5 @@
 'use strict';
 
-/* window.addEventListener('popstate', function() {
-    loader.style.display = 'block';
-})
-
-    window.addEventListener('load', function() {
-        this.setTimeout(() => {
-            loader.style.display = 'none';
-        }, 5000)
-    }) */
-
 const newsCategories = document.querySelectorAll('.news__category');
 const newsList = document.querySelector('.news__list');
 const loadMore = document.querySelector('.news__load-more')
